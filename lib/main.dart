@@ -18,8 +18,9 @@ class TextWidget extends StatelessWidget {
       child: Scaffold(
         body: Center(
           child: Text(
-            'Hello World',
-            style: TextStyle(fontSize: 40),
+            'Hello Flutter!',
+            style: TextStyle(
+                fontSize: 40, color: Colors.blue, fontWeight: FontWeight.bold),
           ),
         ),
       ),
