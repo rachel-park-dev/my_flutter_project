@@ -27,8 +27,19 @@ class TextWidget extends StatelessWidget {
         centerTitle: true,
         title: const Text('App Bar'),
       ),
-      body: CustomContainer(),
+      body: Body(),
     ));
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Placeholder(
+      child: Text('placeholder'), // placeholder : 자리만 차지하는 위젯
+    );
   }
 }
 
