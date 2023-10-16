@@ -38,29 +38,87 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Flexible(
-        flex: 1,
-        child: Container(
-          color: Colors.red,
-        ),
+      Container(
+        width: 100,
+        height: 100,
+        color: Colors.red,
+        margin: const EdgeInsets.symmetric(vertical: 8),
       ),
-      Flexible(
-        flex: 2,
-        child: Container(
-          color: Colors.green,
-        ),
+      Container(
+        width: 100,
+        height: 100,
+        color: Colors.red,
+        margin: const EdgeInsets.symmetric(vertical: 8),
       ),
-      Flexible(
-        flex: 3,
+      Expanded(
         child: Container(
-          color: Colors.yellow,
-        ),
+            width: 100,
+            height: 100,
+            color: Colors.red,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: SingleChildScrollView(
+                child: Column(children: [
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.blue,
+                margin: const EdgeInsets.symmetric(vertical: 4),
+              ),
+            ]))),
       ),
-      Flexible(
-        flex: 4,
-        child: Container(
-          color: Colors.lightBlue,
-        ),
+      Container(
+        width: 100,
+        height: 100,
+        color: Colors.red,
+        margin: const EdgeInsets.symmetric(vertical: 8),
       ),
     ]);
   }
