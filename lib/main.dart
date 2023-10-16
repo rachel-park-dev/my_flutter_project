@@ -14,34 +14,52 @@ class TextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            actions: [
-              IconButton(
-                  icon: Icon(Icons.home),
-                  onPressed: () {
-                    print('home button pressed');
-                  }),
-              Icon(Icons.play_arrow),
-            ],
-            centerTitle: true,
-            title: const Text('App Bar'),
-          ),
-          body: Center(
-            child: Text(
-              'Hello Flutter!',
-              style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print('floating button pressed');
-            },
-            child: Icon(Icons.add),
-          )),
-    );
+        child: Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                print('home button pressed');
+              }),
+          Icon(Icons.play_arrow),
+        ],
+        centerTitle: true,
+        title: const Text('App Bar'),
+      ),
+      body: CustomContainer(),
+    ));
+  }
+}
+
+class CustomContainer extends StatelessWidget {
+  const CustomContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        // width: double.infinity,
+        // height: double.infinity,
+        width: 300,
+        height: 300,
+        // color: Colors.pink.shade50,
+        padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
+        margin: const EdgeInsets.symmetric(vertical: 50, horizontal: 50),
+        decoration: BoxDecoration(
+          //상위에 color가 있으면 적용되지 않음 - 충돌남
+          color: const Color(0xFC97B7FF),
+          border: Border.all(color: Colors.black, width: 2),
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                offset: Offset(10, 10),
+                blurRadius: 10,
+                spreadRadius: 1),
+          ],
+        ),
+        child: const Center(
+            child: Text('Hello World',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))));
   }
 }
