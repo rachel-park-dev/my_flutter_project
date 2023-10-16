@@ -37,89 +37,16 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.red,
-        margin: const EdgeInsets.symmetric(vertical: 8),
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.red,
-        margin: const EdgeInsets.symmetric(vertical: 8),
-      ),
-      Expanded(
-        child: Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            child: SingleChildScrollView(
-                child: Column(children: [
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                color: Colors.blue,
-                margin: const EdgeInsets.symmetric(vertical: 4),
-              ),
-            ]))),
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.red,
-        margin: const EdgeInsets.symmetric(vertical: 8),
-      ),
+    return Stack(children: [
+      Container(width: 500, height: 500, color: Colors.black),
+      Align(
+          alignment: Alignment.bottomCenter, //위젯의 기본 사이즈를 벗어나서 화면에 꽉차게 됨
+          child: Container(width: 300, height: 300, color: Colors.red)),
+      Positioned(
+          bottom: 50,
+          right: 10,
+          child: Container(width: 200, height: 200, color: Colors.green)),
+      Container(width: 100, height: 100, color: Colors.yellow),
     ]);
   }
 }
