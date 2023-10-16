@@ -37,9 +37,32 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder(
-      child: Text('placeholder'), // placeholder : 자리만 차지하는 위젯
-    );
+    return Column(children: [
+      Flexible(
+        flex: 1,
+        child: Container(
+          color: Colors.red,
+        ),
+      ),
+      Flexible(
+        flex: 2,
+        child: Container(
+          color: Colors.green,
+        ),
+      ),
+      Flexible(
+        flex: 3,
+        child: Container(
+          color: Colors.yellow,
+        ),
+      ),
+      Flexible(
+        flex: 4,
+        child: Container(
+          color: Colors.lightBlue,
+        ),
+      ),
+    ]);
   }
 }
 
