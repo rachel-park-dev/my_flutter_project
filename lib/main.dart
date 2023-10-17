@@ -1,13 +1,105 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(body: TextWidget())));
+  runApp(const MaterialApp(home: HomePage()));
 }
 
 /// MaterialApp : 최상위 레이아웃
 /// Scaffold : 화면의 기본 레이아웃 - 도화지
 /// SafeArea : 화면의 안전한 영역 - 도화지의 안쪽 영역
 
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Hello World'),
+        ),
+        body: const Body(),
+      ),
+    );
+  }
+}
+
+class Body extends StatelessWidget {
+  const Body({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        const ExampleStateless(),
+        const ExampleStateful(index: 3),
+      ],
+    );
+  }
+}
+
+class ExampleStateless extends StatelessWidget {
+  const ExampleStateless({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(child: Container(color: Colors.red));
+  }
+}
+
+class ExampleStateful extends StatefulWidget {
+  final int index;
+  const ExampleStateful({required this.index, super.key});
+
+  @override
+  State<ExampleStateful> createState() => _ExampleStatefulState();
+}
+
+class _ExampleStatefulState extends State<ExampleStateful> {
+  late int _index; // widget.index는 위젯의 프로퍼티  _index는 위젯의 상태(private)
+  late TextEditingController textController;
+
+  @override
+  void initState() {
+    super.initState(); // 상위 클래스의 initState() 호출
+    _index = widget.index;
+    textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    // 위젯이 종료될 때 호출되는 메서드
+    super.dispose(); // 상위 클래스의 dispose() 호출
+    textController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_index == 5) {
+              _index = 0;
+              return;
+            }
+            _index++;
+          });
+          print(_index);
+        },
+        child: Container(
+            color: Colors.blue,
+            child: Center(
+                child: Text(
+              '$_index',
+              style: TextStyle(fontSize: 50),
+            ))),
+      ),
+    );
+  }
+}
+
+/*
 class TextWidget extends StatelessWidget {
   const TextWidget({super.key});
 
@@ -31,7 +123,9 @@ class TextWidget extends StatelessWidget {
     ));
   }
 }
+*/
 
+/*
 class Body extends StatelessWidget {
   const Body({super.key});
 
@@ -54,7 +148,9 @@ class Body extends StatelessWidget {
         ));
   }
 }
+*/
 
+/*
 class CustomStack extends StatelessWidget {
   const CustomStack({super.key});
 
@@ -90,7 +186,9 @@ class CustomStack extends StatelessWidget {
     return StackWidget;
   }
 }
+*/
 
+/*
 class CustomContainer extends StatelessWidget {
   const CustomContainer({super.key});
 
@@ -122,3 +220,4 @@ class CustomContainer extends StatelessWidget {
                 style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))));
   }
 }
+*/
