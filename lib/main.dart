@@ -37,17 +37,57 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      Container(width: 500, height: 500, color: Colors.black),
+    return Container(
+        width: 500,
+        height: 500,
+        color: Colors.lightGreen,
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: 300,
+            maxHeight: 300,
+          ),
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.lightBlue,
+          ),
+        ));
+  }
+}
+
+class CustomStack extends StatelessWidget {
+  const CustomStack({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    var StackWidget = Stack(children: [
       Align(
-          alignment: Alignment.bottomCenter, //위젯의 기본 사이즈를 벗어나서 화면에 꽉차게 됨
-          child: Container(width: 300, height: 300, color: Colors.red)),
-      Positioned(
-          bottom: 50,
-          right: 10,
-          child: Container(width: 200, height: 200, color: Colors.green)),
-      Container(width: 100, height: 100, color: Colors.yellow),
+        alignment: Alignment.center,
+        child: Container(
+          width: 300,
+          height: 300,
+          decoration: BoxDecoration(
+              color: Colors.amber, borderRadius: BorderRadius.circular(150)),
+        ),
+      ),
+      Align(
+        alignment: Alignment.center,
+        child: Container(
+          width: 260,
+          height: 260,
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(130)),
+        ),
+      ),
+      Align(
+        alignment: Alignment.center,
+        child: Text(
+          'Count 0',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      )
     ]);
+    return StackWidget;
   }
 }
 
